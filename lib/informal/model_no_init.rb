@@ -10,7 +10,7 @@ module Informal
     end
 
     module ClassMethods
-      if ActiveModel::VERSION::MAJOR >= 3 && ActiveModel::VERSION::MINOR > 0
+      if ActiveModel.version >= Gem::Version.new("3.1")
         def informal_model_name(name)
           @_model_name = ActiveModel::Name.new(self, nil, name)
         end
